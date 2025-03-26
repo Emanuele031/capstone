@@ -1,0 +1,20 @@
+:root {
+  --color-bianco-grigio: #E5E7E6;
+  --color-marrone: #322C2A;
+  --color-verde: #33611C;
+  --color-bianco-sezione: #D9D9D9;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-bianco-grigio);
+  margin: 0;
+  padding: 0;
+}
+
+.hero-banner {
+  background: linear-gradient(to bottom, rgba(50,44,42,0.5), var(--color-bianco-grigio));
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+}
