@@ -52,3 +52,7 @@ export default tseslint.config({
   },
 })
 ```
+The backend for this project is maintained in a separate repository. Keeping the frontend and backend in separate repositories allows for a clear, modular structure that simplifies development and deployment. Both parts are essential for a complete EcoTrack application.
+
+You can access the backend repository at the following link:
+https://github.com/Emanuele031/ecotrack1-master.git
