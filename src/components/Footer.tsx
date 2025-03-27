@@ -24,13 +24,13 @@ const Footer: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <a href="https://facebook.com/tuoprofilo" target="_blank" rel="noopener noreferrer" className="text-white me-3">
+              <a href="https://facebook.com/Emanuele-Lazzaro" target="_blank" rel="noopener noreferrer" className="text-white me-3">
                 <FaFacebookF size={24} />
               </a>
-              <a href="https://instagram.com/tuoprofilo" target="_blank" rel="noopener noreferrer" className="text-white me-3">
+              <a href="https://instagram.com/emanuele_031" target="_blank" rel="noopener noreferrer" className="text-white me-3">
                 <FaInstagram size={24} />
               </a>
-              <a href="https://linkedin.com/in/tuoprofilo" target="_blank" rel="noopener noreferrer" className="text-white">
+              <a href="https://linkedin.com/in/emanuele-lazzaro-b910b7342" target="_blank" rel="noopener noreferrer" className="text-white">
                 <FaLinkedinIn size={24} />
               </a>
             </motion.div>

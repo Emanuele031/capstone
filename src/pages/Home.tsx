@@ -3,7 +3,7 @@ import { Container, Button, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaLeaf } from 'react-icons/fa';
-import LogoV from '../assets/LOGO VERDE.png';
+import Logo from '../assets/LOGO VERDE.png';
 import Terra from '../assets/ecotrack.png';
 import logoM from '../assets/LOGO MARRONE.png';
 import '../styles/Home.css';
@@ -16,29 +16,42 @@ const Home: React.FC = () => {
     <div className="overflow-hidden">
       
       <motion.div
-        className="hero-banner vh-100 d-flex align-items-center justify-content-center text-center"
-        style={{
-          backgroundImage: `url(${LogoV})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+      className="hero vh-100 d-flex flex-column  align-items-center text-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.img
+        src={Logo}
+        alt="Logo Verde"
+        className="img-fluid"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        style={{ maxWidth: '550px', width: '100%' }} // width relativa per responsività
+      />
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="mt-3"
       >
-        <Container>
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-           <Button variant="outline-success" size="lg" onClick={() => navigate('/info')} className="fw-bold px-5 py-3 shadow-lg" style={{ fontSize: '1.5rem', borderRadius: '30px', backdropFilter: 'blur(5px)', marginTop: '19em'  }}>
-               SCOPRI DI PIÙ
-            </Button>
-          </motion.div>
-        </Container>
+        <Button 
+          variant="outline-success" 
+          size="lg" 
+          onClick={() => navigate('/info')}
+          className="fw-bold px-5 py-3 shadow-lg"
+          style={{
+            fontSize: '1.5rem',
+            borderRadius: '30px',
+            backdropFilter: 'blur(5px)',
+            marginTop: '-3em'
+          }}
+        >
+          SCOPRI DI PIÙ
+        </Button>
       </motion.div>
+    </motion.div>
 
       
       <motion.div
@@ -52,56 +65,57 @@ const Home: React.FC = () => {
         }}
       >
         
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 2 }}>
-          <Container className="py-5 text-start">
-            <Row>
-              <Col xs={12} md={8}>
-                <motion.h2
-                  className="display-4 mb-3"
-                  style={{
-                    background: 'linear-gradient(90deg, #4CAF50, #2E7D32)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontWeight: '800',
-                  }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
-                >
-                   BENVENUTO SU ECOTRACK 🌱
-                </motion.h2>
+        <div className="welcome-overlay">
+  <Container className="py-5 text-start">
+    <Row>
+      <Col xs={12} md={8}>
+        <motion.h2
+          className="display-4 mb-3"
+          style={{
+            background: 'linear-gradient(90deg, #4CAF50, #2E7D32)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontWeight: '800',
+          }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          BENVENUTO SU ECOTRACK 🌱
+        </motion.h2>
 
-                <motion.p
-                  className="lead text-dark"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
-                  Monitora e migliora il tuo impatto ambientale in modo semplice e divertente. <br />
-                  Ogni piccola azione fa la differenza!
-                </motion.p>
+        <motion.p
+          className="lead text-dark"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          Monitora e migliora il tuo impatto ambientale in modo semplice e divertente. <br />
+          Ogni piccola azione fa la differenza!
+        </motion.p>
 
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, delay: 1 }}
-                >
-                  <Button
-                    variant="outline-success"
-                    size="lg"
-                    className="mt-4"
-                    onClick={() => navigate('/Profile')}
-                  >
-                    <FaLeaf className="me-2" /> INIZIA LE MISSIONI
-                  </Button>
-                </motion.div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="mt-4"
+            onClick={() => navigate('/Profile')}
+          >
+            <FaLeaf className="me-2" /> INIZIA LE MISSIONI
+          </Button>
+        </motion.div>
+      </Col>
+    </Row>
+  </Container>
+</div>
+
 
         
-        <Container className="h-100 d-flex align-items-end">
+        <Container className="terra-text-container h-100 d-flex align-items-end">
           <Row className="w-100">
             <Col md={8} className="mx-auto text-center text-white">
               <motion.h1

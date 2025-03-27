@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import logoNav from '../assets/LOGO BIANCO.png';
-import profileImg from '../assets/tobias-tullius--wR0XMaegRo-unsplash.png';
+import { FaUser } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { logout } from '../redux/authSlice';
@@ -66,27 +66,30 @@ const Navigation: React.FC = () => {
               ))}
             </Nav>
             <Nav className="ms-auto d-flex align-items-center">
-              {token && (
-                <motion.div>
-                  <Nav.Link as={NavLink} to="/profile" className="d-flex align-items-center">
-                    <motion.img
-                      src={profileImg}
-                      alt="Profilo"
-                      style={{
-                        width: '45px',
-                        height: '45px',
-                        borderRadius: '50%',
-                        border: '2px solid #fff',
-                        objectFit: 'cover',
-                        marginRight: '0.5rem'
-                      }}
-                      whileHover={{ scale: 1.1, boxShadow: '0px 0px 8px rgba(255,255,255,0.8)' }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    />
-                    <span style={{ color: '#fff', fontWeight: 'bold' }}>{user?.username}</span>
-                  </Nav.Link>
-                </motion.div>
-              )}
+            {token && (
+  <motion.div>
+    <Nav.Link as={NavLink} to="/profile" className="d-flex align-items-center">
+      <motion.div
+        whileHover={{ scale: 1.1, boxShadow: '0px 0px 8px rgba(255,255,255,0.8)' }}
+        transition={{ type: 'spring', stiffness: 300 }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          border: '2px solid #fff',
+          marginRight: '0.5rem'
+        }}
+      >
+        <FaUser size={30} style={{ color: '#fff' }} />
+      </motion.div>
+      <span style={{ color: '#fff', fontWeight: 'bold' }}>{user?.username}</span>
+    </Nav.Link>
+  </motion.div>
+)}
+
               {token ? (
                 <Button variant="outline-light" onClick={handleLogout} className="ms-3">
                   Logout

@@ -10,7 +10,7 @@ export interface User {
   
 }
 
-// Interfaccia dello state di auth
+
 export interface AuthState {
   user: User | null;
   token: string | null;
@@ -18,7 +18,7 @@ export interface AuthState {
   error: string | null;
 }
 
-// Interfaccia per la risposta del backend (login e register)
+
 export interface AuthResponse {
   token: string;
   user: User;

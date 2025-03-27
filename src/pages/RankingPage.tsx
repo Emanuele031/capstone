@@ -32,6 +32,7 @@ const RankingPage: React.FC = () => {
   useEffect(() => {
     dispatch(fetchRanking());
   }, [dispatch]);
+  
 
   useEffect(() => {
     dispatch(fetchRecommendations());
@@ -42,11 +43,20 @@ const RankingPage: React.FC = () => {
 
   const handleAddHabit = () => {
     if (habitInput.trim()) {
-      dispatch(addHabit({ text: habitInput, type: "GENERICO" }));
+      dispatch(addHabit({ text: habitInput, type: "GENERICO" }))
+        .unwrap()
+        .then(() => {
+          // Dopo aver aggiunto l'abitudine, aggiorna la classifica
+          dispatch(fetchRanking());
+          dispatch(fetchRecommendations());
+        })
+        .catch((err) => {
+          console.error("Errore nell'aggiunta dell'abitudine", err);
+        });
       setHabitInput('');
-      dispatch(fetchRecommendations());
     }
   };
+  
 
   if (loading) {
     return (

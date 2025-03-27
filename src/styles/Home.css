@@ -48,18 +48,145 @@
     font-size: 1.5rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   }
+  .welcome-overlay .display-4 {
+    font-size: 3rem;
+  }
   
+  .welcome-overlay .lead {
+    font-size: 1.25rem;
+  }
   
-  @media (max-width: 768px) {
-    .hero-banner {
-      height: 80vh;
+  .welcome-overlay button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .welcome-overlay {
+      
+      margin-top: -8em; 
+      padding: 1.5rem;
     }
-    .hero-button-wrapper .hero-button {
-      margin-top: 10em;
-      font-size: 1.2rem;
+    .welcome-overlay .display-4 {
+      font-size: 2.5rem;  
     }
-    .innovation-section {
-      height: 80vh;
+    .welcome-overlay .lead {
+      font-size: 1.1rem;  
+    }
+    .welcome-overlay button {
+      font-size: 1.1rem;
+      padding: 0.75rem 1.25rem;
     }
   }
   
+  
+  
+  
+  @media (max-width: 768px) {
+    .welcome-overlay {
+      margin-top: -10em; 
+      padding: 1rem;
+    }
+    .welcome-overlay .display-4 {
+      font-size: 2rem;
+    }
+    .welcome-overlay .lead {
+      font-size: 1rem;
+    }
+    .welcome-overlay button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  
+  @media (max-width: 576px) {
+    .welcome-overlay {
+      margin-top: -8em; 
+      padding: 0.5rem;
+    }
+    .welcome-overlay .display-4 {
+      font-size: 1.75rem;
+    }
+    .welcome-overlay .lead {
+      font-size: 0.9rem;
+    }
+    .welcome-overlay button {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+  
+  
+.terra-text-container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+@media (max-width: 1200px) {
+  .terra-text-container {
+    bottom: 8%;
+    padding: 1.5rem;
+  }
+  .terra-text-container .display-4 {
+    font-size: 2.5rem;
+  }
+  .terra-text-container .lead {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .terra-text-container {
+    bottom: 10%;
+    padding: 1rem;
+  }
+  .terra-text-container .display-4 {
+    font-size: 2rem;
+  }
+  .terra-text-container .lead {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .terra-text-container {
+    bottom: 12%;
+    padding: 0.5rem;
+  }
+  .terra-text-container .display-4 {
+    font-size: 1.75rem;
+  }
+  .terra-text-container .lead {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .terra-text-container .display-4,
+  .terra-text-container .lead {
+    color: #3E2723 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .terra-text-container {
+    top: 5%; 
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .terra-text-container {
+    margin-bottom: 13em;
+  }
+}
+
+
