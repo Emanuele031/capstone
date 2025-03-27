@@ -31,7 +31,7 @@ const initialState: AuthState = {
   error: null,
 };
 
-// Thunk per il login
+
 export const loginUser = createAsyncThunk<AuthResponse, { email: string; password: string }, { rejectValue: string }>(
   'auth/loginUser',
   async (credentials, { rejectWithValue }) => {
@@ -53,7 +53,7 @@ export const loginUser = createAsyncThunk<AuthResponse, { email: string; passwor
   }
 );
 
-// Thunk per la registrazione
+
 export const registerUser = createAsyncThunk<AuthResponse, any, { rejectValue: string }>(
   'auth/registerUser',
   async (userData, { rejectWithValue }) => {
@@ -75,7 +75,7 @@ export const registerUser = createAsyncThunk<AuthResponse, any, { rejectValue: s
   }
 );
 
-// NUOVO: Thunk per recuperare i dati dell'utente dal backend
+
 export const fetchUser = createAsyncThunk<User, void, { rejectValue: string }>(
   'auth/fetchUser',
   async (_, { getState, rejectWithValue }) => {
@@ -117,7 +117,7 @@ const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // Login
+    
     builder.addCase(loginUser.pending, (state) => {
       state.status = 'loading';
       state.error = null;
@@ -132,7 +132,7 @@ const authSlice = createSlice({
       state.status = 'failed';
       state.error = action.payload || action.error.message || 'Login fallito';
     });
-    // Register
+    
     builder.addCase(registerUser.pending, (state) => {
       state.status = 'loading';
       state.error = null;
@@ -149,7 +149,7 @@ const authSlice = createSlice({
       state.status = 'failed';
       state.error = action.payload || action.error.message || 'Registrazione fallita';
     });
-    // fetchUser
+    
     builder.addCase(fetchUser.pending, (state) => {
       state.status = 'loading';
       state.error = null;
